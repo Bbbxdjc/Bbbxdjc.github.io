@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bbbxdjc.github.io/sitemap.xml
