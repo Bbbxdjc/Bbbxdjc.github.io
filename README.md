@@ -16,9 +16,6 @@ Run `python3 -m http.server 8765` from this directory.
 - `intellicar.js`: two video clips, an original workflow figure, a 19-slide presentation gallery, and the final report.
 - `documents/Yihang_Zou_CV.pdf`: concise public CV.
 
-IntelliCar videos are compressed to browser-compatible MP4 and never autoplay. The original report figure and presentation design are preserved, and the project credits the full team. The source presentation and private code archive are not published.
-
-Only the school emails yz897@duke.edu and yihang.zou@dukekunshan.edu.cn are used for public contact. Grades, phone numbers, personal Gmail, transcripts, reference contacts, application correspondence, unpublished manuscript details, and internal research materials are excluded.
 
 ## Deployment
 
