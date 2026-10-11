@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://bbbxdjc.github.io/sitemap.xml
+
+# Pages carry noindex. Allow crawling so supporting engines can read that rule.

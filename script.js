@@ -15,11 +15,13 @@ if('IntersectionObserver' in window) { const sectionLinks=[...navigation.querySe
 const figureDialog=document.querySelector('.figure-dialog');
 const figureImage=document.querySelector('#figure-dialog-image');
 const figureScale=document.querySelector('#figure-scale');
+let figureBaseWidth;
 const paperFigures={
+  'gainsight-prototype':{title:'GainSight · System overview',caption:'Integrated prototype. Original manuscript Figure 1(b), showing the onboard computer, LiDAR, IMU, and walker platform.',image:'assets/gainsight-prototype.png',width:280},
   'iot-framework':{title:'IoT-SkillsBench · Figure 1',caption:'Skills-based agentic framework and hardware-in-the-loop benchmark. Cropped directly from the supplied paper, page 1.',image:'assets/iot-framework.png'}
 };
-document.querySelectorAll('[data-figure]').forEach(button=>button.addEventListener('click',()=>{const figure=paperFigures[button.dataset.figure];document.querySelector('#figure-dialog-title').textContent=figure.title;document.querySelector('.figure-dialog-caption').textContent=figure.caption;figureImage.src=figure.image;figureImage.alt=button.querySelector('img').alt;figureScale.value='1';figureImage.style.width='100%';figureDialog.showModal();document.body.classList.add('modal-open');}));
+document.querySelectorAll('[data-figure]').forEach(button=>button.addEventListener('click',()=>{const figure=paperFigures[button.dataset.figure];document.querySelector('#figure-dialog-title').textContent=figure.title;document.querySelector('.figure-dialog-caption').textContent=figure.caption;figureImage.src=figure.image;figureImage.alt=button.querySelector('img').alt;figureScale.value='1';figureBaseWidth=figure.width;figureImage.style.width=figureBaseWidth?figureBaseWidth+'px':'100%';figureDialog.showModal();document.body.classList.add('modal-open');}));
 document.querySelector('.figure-close').addEventListener('click',()=>figureDialog.close());
 figureDialog.addEventListener('close',()=>document.body.classList.remove('modal-open'));
 figureDialog.addEventListener('click',e=>{if(e.target===figureDialog){const r=figureDialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)figureDialog.close();}});
-figureScale.addEventListener('input',()=>{figureImage.style.width=String(Number(figureScale.value)*100)+'%';});
+figureScale.addEventListener('input',()=>{figureImage.style.width=String(Number(figureScale.value)*(figureBaseWidth||100))+(figureBaseWidth?'px':'%');});
