@@ -1,0 +1,5 @@
+.DS_Store
+.preview.pid
+*.log
+node_modules/
+
