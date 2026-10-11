@@ -15,7 +15,7 @@ Run `python3 -m http.server 8765` from this directory.
 - `script.js`: navigation, citation controls, and the published-paper figure viewer.
 - `intellicar.js`: two video clips, an original workflow figure, a 19-slide presentation gallery, and the final report.
 
-GainSight is marked “Manuscript under review” and shows only the original hardware overview panel, without participants or experimental results. CV files, full manuscripts, and GainSight videos are not included in the public site.
+GainSight is marked “Manuscript under review” and appears in Selected Publications with its manuscript title and the complete original Figure 1, covering real-world navigation, the integrated prototype, and indoor navigation scenarios. CV files, full manuscripts, and GainSight videos are not included in the public site.
 
 The homepage uses noindex, nofollow, and noimageindex to reduce search exposure. Crawling remains allowed so supporting search engines can read these directives; they do not restrict direct access or downloads.
 
