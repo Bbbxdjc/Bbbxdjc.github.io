@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f7f3">
+  <meta name="robots" content="noindex, nofollow, noimageindex">
+  <meta name="description" content="IntelliCar project demo, speech-to-action workflow, presentation, and report. A hybrid voice-controlled rover by Yihang Zou, Yuchu Guo, and Yifan Xu.">
+  <link rel="canonical" href="https://bbbxdjc.github.io/intellicar-demo/">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css?v=dd1bb9c9">
+  <script src="../intellicar.js?v=standalone-20261029" defer></script>
+  <title>IntelliCar · Demo &amp; Project Materials | Yihang Zou</title>
+  <style>
+    .demo-page{max-width:960px;padding-block:38px 30px}
+    .demo-page h1{font-family:var(--serif);font-size:46px;line-height:1.15;letter-spacing:-1.5px;margin:12px 0}
+    .demo-page>.eyebrow{margin-bottom:8px}
+    .demo-subtitle{font-size:15px;line-height:1.6;color:var(--muted);margin:0 0 23px;max-width:750px}
+    .demo-header-home,.demo-return{color:var(--accent);font-size:13px}
+    .demo-return{display:inline-block;margin-top:20px}
+    .demo-page .project-dialog-body{padding:22px 0}
+    .demo-page .project-media video{max-height:62vh}
+    .demo-page .project-slide-frame img{max-height:62vh}
+    .demo-page .project-media-toolbar,.demo-page .project-slide-controls{font-size:12px}
+    .demo-page .project-material-note,.demo-page .project-report-summary{font-size:13px}
+    .demo-page .project-workflow figcaption{font-size:11px}
+    .demo-credit{border-top:1px solid var(--line);padding-top:16px;font-size:12px;line-height:1.8;color:var(--muted)}
+    .demo-credit a{color:var(--accent)}
+    @media(max-width:760px){
+      .demo-page{padding-top:27px}.demo-page h1{font-size:38px}
+      .demo-page>.eyebrow{font-size:9px;line-height:1.7}
+      .demo-subtitle{font-size:13px}.demo-header-home{font-size:12px}
+      .demo-page .project-dialog-body{padding:16px 0}
+      .demo-page .project-media-toolbar,.demo-page .project-slide-controls{font-size:11px}
+      .demo-page .project-material-note,.demo-page .project-report-summary{font-size:12px}
+      .demo-page .project-workflow figcaption,.demo-credit{font-size:11px}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to project materials</a>
+  <header class="site-header"><div class="header-inner"><a class="wordmark" href="../" aria-label="Yihang Zou, homepage">Yihang Zou<span class="wordmark-dot">.</span></a><a class="demo-header-home" href="../">← Homepage</a></div></header>
+  <main class="demo-page container" id="main">
+    <p class="eyebrow">DUKE ECE 655L · FINAL PROJECT · DECEMBER 2025</p>
+    <h1>IntelliCar</h1>
+    <p class="demo-subtitle">A hybrid voice-controlled rover with adaptive speech recognition, bounded JSON actions, and gyroscope feedback for closed-loop turning.</p>
+    <div id="intellicar-materials">
+    <div class="project-dialog-tabs" role="tablist" aria-label="IntelliCar project materials">
+      <button id="intellicar-tab-demo" role="tab" aria-selected="true" aria-controls="intellicar-pane-demo" tabindex="0" data-panel="demo">Demo</button>
+      <button id="intellicar-tab-workflow" role="tab" aria-selected="false" aria-controls="intellicar-pane-workflow" tabindex="-1" data-panel="workflow">Workflow</button>
+      <button id="intellicar-tab-slides" role="tab" aria-selected="false" aria-controls="intellicar-pane-slides" tabindex="-1" data-panel="slides">Presentation</button>
+      <button id="intellicar-tab-report" role="tab" aria-selected="false" aria-controls="intellicar-pane-report" tabindex="-1" data-panel="report">Report</button>
+    </div>
+    <div class="project-dialog-body">
+      <section id="intellicar-pane-demo" role="tabpanel" aria-labelledby="intellicar-tab-demo" tabindex="0">
+        <div class="project-media"><video id="intellicar-video" controls playsinline preload="metadata" poster="../assets/intellicar-poster.webp" aria-label="IntelliCar demonstration video"><source src="../assets/intellicar-demo.mp4" type="video/mp4">Your browser does not support embedded video. <a href="../assets/intellicar-demo.mp4">Open the demo video.</a></video></div>
+        <div class="project-media-toolbar"><label for="intellicar-clip">Video</label><select id="intellicar-clip"><option value="rover">Rover demonstration · 1:26</option><option value="latency">Pipeline animation · 0:15</option></select><a id="intellicar-video-link" href="../assets/intellicar-demo.mp4" target="_blank" rel="noopener">Open video ↗</a></div>
+        <p class="project-material-note" id="intellicar-video-caption">The original course-project demonstration, with rover motion, voice commands, and live execution logs. Press play to hear the audio.</p>
+      </section>
+      <section id="intellicar-pane-workflow" role="tabpanel" aria-labelledby="intellicar-tab-workflow" tabindex="0" hidden>
+        <figure class="project-workflow"><img src="../assets/intellicar-architecture.png" loading="lazy" alt="Original IntelliCar report Figure 3: parallel Vosk grammar and natural-language recognition, local JSON or Whisper and LLM dispatch, and gyroscope-based motion control."><figcaption>Figure 3 · Adaptive multi-path architecture · Original report, page 4 <a href="../assets/intellicar-architecture.png" target="_blank" rel="noopener">Full-size figure ↗</a></figcaption></figure>
+        <p class="project-material-note">Simple commands take the local parsing path; natural language uses an LLM, with Whisper available for transcription fallback. A bounded JSON interface connects recognition to the motor controller.</p>
+      </section>
+      <section id="intellicar-pane-slides" role="tabpanel" aria-labelledby="intellicar-tab-slides" tabindex="0" hidden>
+        <div class="project-slide-frame"><img id="intellicar-slide-image" src="../assets/intellicar-slides/slide-01.webp" loading="lazy" alt="IntelliCar presentation, slide 1 of 19"></div>
+        <div class="project-slide-controls"><button id="intellicar-slide-prev" aria-label="Previous IntelliCar slide" disabled>←</button><label class="visually-hidden" for="intellicar-slide-select">Presentation slide</label><select id="intellicar-slide-select" aria-label="Presentation slide"></select><button id="intellicar-slide-next" aria-label="Next IntelliCar slide">→</button><a href="../documents/IntelliCar_Presentation.pdf" target="_blank" rel="noopener">Slides PDF ↗</a></div>
+        <p class="project-material-note">Original 19-slide presentation. Embedded videos appear as stills here; both clips are available in the Demo tab. <button class="project-inline-button" id="intellicar-slide-video" hidden>Watch this slide’s video ▷</button></p>
+      </section>
+      <section id="intellicar-pane-report" role="tabpanel" aria-labelledby="intellicar-tab-report" tabindex="0" hidden>
+        <p class="eyebrow">FINAL PROJECT REPORT · 7 PAGES</p><h3>A hybrid voice-controlled rover</h3><p class="project-report-summary">The report documents the Raspberry Pi hardware, adaptive speech pipeline, bounded JSON execution, gyroscope control, and evaluation of the three recognition paths.</p>
+        <dl class="project-latencies"><div><dt>Local grammar</dt><dd>0.038 s</dd></div><div><dt>Vosk → LLM</dt><dd>0.650 s</dd></div><div><dt>Whisper fallback</dt><dd>5.580 s</dd></div></dl>
+        <p class="project-material-note">Total latencies reported in the course-project evaluation, Table 1. Performance depends on the command and hardware.</p><a class="project-report-download" href="../documents/IntelliCar_Report.pdf" target="_blank" rel="noopener">Read the full report ↗</a>
+      </section>
+    </div>
+    </div>
+    <p class="demo-credit">Course project by <a href="https://github.com/Bbbxdjc" target="_blank" rel="noopener">Yihang Zou</a>, <a href="https://github.com/williamguo34" target="_blank" rel="noopener">Yuchu Guo</a>, and <a href="https://github.com/yxu-dev" target="_blank" rel="noopener">Yifan Xu</a> · Duke University</p>
+    <a class="demo-return" href="../#intellicar">← Back to the IntelliCar project</a>
+  </main>
+</body>
+</html>

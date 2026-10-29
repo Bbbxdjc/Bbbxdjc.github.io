@@ -2,7 +2,7 @@
 
 Public academic homepage at https://bbbxdjc.github.io/.
 
-Plain HTML, CSS, and JavaScript with responsive navigation, a published paper and original figure viewer, research summaries, and an IntelliCar project dialog.
+Plain HTML, CSS, and JavaScript with responsive navigation, a published paper and original figure viewer, research summaries, and standalone project demo pages.
 
 ## Preview
 
@@ -13,7 +13,8 @@ Run `python3 -m http.server 8765` from this directory.
 - `index.html`: biography, research summaries, published work, projects, and school contact addresses.
 - `styles.css`: visual design and responsive layouts.
 - `script.js`: navigation, citation controls, and the published-paper figure viewer.
-- `intellicar.js`: two video clips, an original workflow figure, a 19-slide presentation gallery, and the final report.
+- `intellicar-demo/index.html`: standalone IntelliCar page with two video clips, an original workflow figure, a 19-slide presentation gallery, and the final report.
+- `intellicar.js`: video switching, accessible material tabs, presentation navigation, and direct section links for the IntelliCar page.
 
 GainSight is marked “Submitted to CHI” and appears in Selected Publications with its manuscript title and the complete original Figure 1, covering real-world navigation, the integrated prototype, and indoor navigation scenarios. The public demo video is available at `/gainsight-demo/`, with links back to the homepage. CV files and full manuscripts are not included in the public site.
 

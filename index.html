@@ -16,7 +16,6 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css?v=dd1bb9c9">
   <script src="script.js?v=0b645239" defer></script>
-  <script src="intellicar.js" defer></script>
   <title>Yihang Zou | Research & Projects</title>
 </head>
 <body>
@@ -81,7 +80,7 @@
 
     <section class="section container" id="projects" aria-labelledby="projects-title"><div class="section-heading"><div><p class="eyebrow">03 / SELECTED PROJECTS</p><h2 id="projects-title">Things I’ve built.</h2></div><p class="section-aside">Small systems.<br>Concrete questions.</p></div>
       <div class="project-grid">
-        <article class="project-card" id="intellicar"><div class="project-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M9 30h30M14 30V18h20v12M18 18v-5h12v5M18 24h1m10 0h1M17 36h14"/><circle cx="12" cy="34" r="4"/><circle cx="36" cy="34" r="4"/></svg></div><p class="project-date">DUKE ECE 655 · 2025</p><h3>IntelliCar</h3><p>A hybrid voice-controlled rover. An adaptive Vosk, Whisper, and LLM pipeline turns speech into bounded JSON actions, with gyroscope feedback for closed-loop turning.</p><div class="project-tags"><span>Speech → action</span><span>Raspberry Pi</span></div><div class="project-links"><button class="intellicar-open" aria-haspopup="dialog">Demo &amp; slides ▷</button><a href="documents/IntelliCar_Report.pdf" target="_blank" rel="noopener">Report ↗</a></div></article>
+        <article class="project-card" id="intellicar"><div class="project-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M9 30h30M14 30V18h20v12M18 18v-5h12v5M18 24h1m10 0h1M17 36h14"/><circle cx="12" cy="34" r="4"/><circle cx="36" cy="34" r="4"/></svg></div><p class="project-date">DUKE ECE 655 · 2025</p><h3>IntelliCar</h3><p>A hybrid voice-controlled rover. An adaptive Vosk, Whisper, and LLM pipeline turns speech into bounded JSON actions, with gyroscope feedback for closed-loop turning.</p><div class="project-tags"><span>Speech → action</span><span>Raspberry Pi</span></div><div class="project-links"><a href="intellicar-demo/">Demo &amp; slides ↗</a><a href="intellicar-demo/#report">Report ↗</a></div></article>
         <article class="project-card"><div class="project-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 7l14 6v12c0 8-14 16-14 16S10 33 10 25V13zM18 23v-3a6 6 0 0 1 12 0v3M17 23h14v10H17z"/></svg></div><p class="project-date">HACKATHON · 2025</p><h3>IncogAgent</h3><p>A local privacy layer for cloud AI. Sensitive entities become typed semantic tokens before submission; the mapping remains local, so the original values can be restored in returned responses.</p><div class="project-tags"><span>Local privacy</span><span>AI middleware</span></div><div class="project-links"><a href="https://github.com/IncogAgent-Dev/IncogAgent-Mail" target="_blank" rel="noopener">Code ↗</a><a href="https://incogagent-dev.github.io" target="_blank" rel="noopener">Demo ↗</a></div></article>
         <article class="project-card"><div class="project-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 20v8M14 14v20M20 9v30M26 16v16M32 12v24M38 20v8"/></svg></div><p class="project-date">DUKE ECE 661 · 2025</p><h3>Whisper Distillation</h3><p>A reproducible speech-model compression pipeline. I compare cross-entropy training, conventional knowledge distillation, and decoupled knowledge distillation for smaller Whisper decoders.</p><div class="project-tags"><span>Speech recognition</span><span>Efficient ML</span></div><div class="project-links"><a href="https://github.com/Emmastyle/Whisper-Distillation" target="_blank" rel="noopener">Code ↗</a></div></article>
       </div>
@@ -97,37 +96,7 @@
   </main>
   <footer class="container site-footer"><p>© 2026 Yihang Zou</p><p>Last updated October 2026</p><a href="#about">Back to top ↑</a></footer>
   <dialog class="figure-dialog" aria-labelledby="figure-dialog-title"><div class="figure-dialog-header"><h2 id="figure-dialog-title">Original paper figure</h2><div><label for="figure-scale">Zoom</label><input id="figure-scale" type="range" min="1" max="2.5" step="0.25" value="1" aria-label="Figure zoom"><button class="figure-close" aria-label="Close figure">Close ×</button></div></div><div class="figure-dialog-scroll" tabindex="0" aria-label="Scrollable original figure"><img id="figure-dialog-image" alt=""></div><p class="figure-dialog-caption"></p></dialog>
-  <dialog class="project-dialog" id="intellicar-dialog" aria-labelledby="intellicar-dialog-title">
-    <div class="project-dialog-header"><div><p class="eyebrow">DUKE ECE 655L · FINAL PROJECT · DECEMBER 2025</p><h2 id="intellicar-dialog-title">IntelliCar</h2></div><button class="project-dialog-close" aria-label="Close IntelliCar project">Close ×</button></div>
-    <div class="project-dialog-tabs" role="tablist" aria-label="IntelliCar project materials">
-      <button id="intellicar-tab-demo" role="tab" aria-selected="true" aria-controls="intellicar-pane-demo" tabindex="0" data-panel="demo">Demo</button>
-      <button id="intellicar-tab-workflow" role="tab" aria-selected="false" aria-controls="intellicar-pane-workflow" tabindex="-1" data-panel="workflow">Workflow</button>
-      <button id="intellicar-tab-slides" role="tab" aria-selected="false" aria-controls="intellicar-pane-slides" tabindex="-1" data-panel="slides">Presentation</button>
-      <button id="intellicar-tab-report" role="tab" aria-selected="false" aria-controls="intellicar-pane-report" tabindex="-1" data-panel="report">Report</button>
-    </div>
-    <div class="project-dialog-body">
-      <section id="intellicar-pane-demo" role="tabpanel" aria-labelledby="intellicar-tab-demo" tabindex="0">
-        <div class="project-media"><video id="intellicar-video" controls playsinline preload="none" poster="assets/intellicar-poster.webp" aria-label="IntelliCar demonstration video"></video></div>
-        <div class="project-media-toolbar"><label for="intellicar-clip">Video</label><select id="intellicar-clip"><option value="rover">Rover demonstration · 1:26</option><option value="latency">Pipeline animation · 0:15</option></select><a id="intellicar-video-link" href="assets/intellicar-demo.mp4" target="_blank" rel="noopener">Open video ↗</a></div>
-        <p class="project-material-note" id="intellicar-video-caption">The original course-project demonstration, with rover motion, voice commands, and live execution logs. Press play to hear the audio.</p>
-      </section>
-      <section id="intellicar-pane-workflow" role="tabpanel" aria-labelledby="intellicar-tab-workflow" tabindex="0" hidden>
-        <figure class="project-workflow"><img src="assets/intellicar-architecture.png" loading="lazy" alt="Original IntelliCar report Figure 3: parallel Vosk grammar and natural-language recognition, local JSON or Whisper and LLM dispatch, and gyroscope-based motion control."><figcaption>Figure 3 · Adaptive multi-path architecture · Original report, page 4 <a href="assets/intellicar-architecture.png" target="_blank" rel="noopener">Full-size figure ↗</a></figcaption></figure>
-        <p class="project-material-note">Simple commands take the local parsing path; natural language uses an LLM, with Whisper available for transcription fallback. A bounded JSON interface connects recognition to the motor controller.</p>
-      </section>
-      <section id="intellicar-pane-slides" role="tabpanel" aria-labelledby="intellicar-tab-slides" tabindex="0" hidden>
-        <div class="project-slide-frame"><img id="intellicar-slide-image" src="assets/intellicar-slides/slide-01.webp" loading="lazy" alt="IntelliCar presentation, slide 1 of 19"></div>
-        <div class="project-slide-controls"><button id="intellicar-slide-prev" aria-label="Previous IntelliCar slide" disabled>←</button><label class="visually-hidden" for="intellicar-slide-select">Presentation slide</label><select id="intellicar-slide-select" aria-label="Presentation slide"></select><button id="intellicar-slide-next" aria-label="Next IntelliCar slide">→</button><a href="documents/IntelliCar_Presentation.pdf" target="_blank" rel="noopener">Slides PDF ↗</a></div>
-        <p class="project-material-note">Original 19-slide presentation. Embedded videos appear as stills here; both clips are available in the Demo tab. <button class="project-inline-button" id="intellicar-slide-video" hidden>Watch this slide’s video ▷</button></p>
-      </section>
-      <section id="intellicar-pane-report" role="tabpanel" aria-labelledby="intellicar-tab-report" tabindex="0" hidden>
-        <p class="eyebrow">FINAL PROJECT REPORT · 7 PAGES</p><h3>A hybrid voice-controlled rover</h3><p class="project-report-summary">The report documents the Raspberry Pi hardware, adaptive speech pipeline, bounded JSON execution, gyroscope control, and evaluation of the three recognition paths.</p>
-        <dl class="project-latencies"><div><dt>Local grammar</dt><dd>0.038 s</dd></div><div><dt>Vosk → LLM</dt><dd>0.650 s</dd></div><div><dt>Whisper fallback</dt><dd>5.580 s</dd></div></dl>
-        <p class="project-material-note">Total latencies reported in the course-project evaluation, Table 1. Performance depends on the command and hardware.</p><a class="project-report-download" href="documents/IntelliCar_Report.pdf" target="_blank" rel="noopener">Read the full report ↗</a>
-      </section>
-    </div>
-    <div class="project-dialog-footer">Course project by Yihang Zou, Yuchu Guo, and Yifan Xu · Duke University</div>
-  </dialog>
+
   <div class="toast" role="status" aria-live="polite"></div>
 </body>
 </html>
